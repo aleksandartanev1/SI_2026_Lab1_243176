@@ -122,18 +122,6 @@ class Library {
         }
         return false;
     }
-
-    public boolean Borrowed(String title) {
-        for (Book b : books) {
-            if (b.getTitle().equalsIgnoreCase(title) && !b.isBorrowed()) {
-                b.setBorrowed(true);
-                System.out.println("Borrowed successfully");
-                return true;
-            }
-        }
-        return false;
-    }
-
 }
 
 public class SI2026Lab1Main {
@@ -150,9 +138,6 @@ public class SI2026Lab1Main {
         } else {
             System.out.println("Knigata ne postoi");
         }
-
-        library.borrowBook("Clean Code");
-
 
         System.out.println("Library initialized.");
     }
