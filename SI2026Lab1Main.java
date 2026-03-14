@@ -108,6 +108,15 @@ class Library {
             }
         }
     }
+
+    public boolean searchBooks(String title) {
+        for (Book b : books) {
+            if (b.getTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 public class SI2026Lab1Main {
@@ -118,6 +127,12 @@ public class SI2026Lab1Main {
         library.addBook(new Book("Effective Java", "Joshua Bloch", "Programming"));
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
+
+        if (library.searchBooks("The Hobbit")){
+            System.out.println("Knigata postoi");
+        } else {
+            System.out.println("Knigata ne postoi");
+        }
 
         System.out.println("Library initialized.");
     }
