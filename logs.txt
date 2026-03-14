@@ -1,0 +1,16 @@
+*   c2ea8dc Merge branch 'feature-borrow-book'
+|\  
+| *   1c52658 Merge branch 'master' into feature-borrow-book
+| |\  
+| * | 6e0f2c0 Implement borrow book
+* | |   3642fce Merge branch 'feature-genre-report'
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 6eb7b93 Implement genre report
+| |/  
+* / a7f3218 Update borrow message on master
+|/  
+* dd5d24b Implement book search
+* f68aac7 Add starter code
+* c919dde Initial commit

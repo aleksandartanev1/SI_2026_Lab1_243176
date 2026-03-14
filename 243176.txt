@@ -1,0 +1,83 @@
+$ mkdir SI_2026_Lab1_243176 - ja kreiram papkata shto ke stane direktorium
+$ cd SI_2026_Lab1_243176 - menuvam momentalnata lokacija vo direktoriumot
+$ git init - direktoriumot go pravam git reposityory
+$ git remote add origin https://github.com/aleksandartanev1/SI_2026_Lab1_243176 - go povrzuvam so GitHub
+$ echo "Aleksandar Tanev, 243176" > README.md - vo readme gi stavam imeto prezimeto i indeksot
+$ git add README.md - go stavam na stage readme.md
+$ git commit -m "Initial commit" - go komitnuvam so porakata initial commit i go zachuvuvam lokalno
+$ git push origin master - go pushnuvam na glavnata granka
+$ git add SI2026Lab1Main.java - go adnuvam na stage java kodot
+$ git commit -m "Add starter code" - komitnuvam so porakata add starter code
+$ git push origin master - go pushnuvam na glavnata granka
+$ git checkout -b feature-search-books - kreiram granka feature-search-books i se prefrluvam na nea
+
+vo java kodot dodadov 
+    public boolean searchBooks(String title) {
+        for (Book b : books) {
+            if (b.getTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+$ git add SI2026Lab1Main.java - na stage
+$ git commit -m "Implement book search" - komitnuvan
+$ git checkout master - se vrakjam na master
+$ git merge feature-search-books - go merguvam
+$ git log --oneline --graph --all
+* dd5d24b (HEAD -> master, origin/feature-search-books, feature-search-books) Implement book search
+* f68aac7 (origin/master) Add starter code
+* c919dde Initial commit
+
+$ git push origin master
+$ git checkout master
+$ git checkout -b feature-borrow-book
+$ git checkout master
+$ git checkout -b feature-genre-report
+
+$ git checkout feature-borrow-book
+$ git add SI2026Lab1Main.java
+$ git commit -m "Implement borrow book"
+
+$ git checkout master
+$ git add SI2026Lab1Main.java
+$ git commit -m "Update borrow message on master."
+
+$ git checkout feature-genre-report
+$ git add SI2026Lab1Main.java
+$ git commit -m "Implement genre report"
+
+$ git checkout feature-borrow-book
+$ git merge master
+Auto-merging SI2026Lab1Main.java
+CONFLICT (content): Merge conflict in SI2026Lab1Main.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+Ги решив конфликтите
+$ git add SI2026Lab1Main.java
+$ git commit
+
+$ git checkout master
+$ git merge feature-genre-report
+
+mergot beshe po ORT strategijata
+
+$ git merge feature-borrow-book
+mergot beshe po ORT strategijata povtorno
+
+$ git push origin master
+$ git log --oneline --graph -all > logs.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
