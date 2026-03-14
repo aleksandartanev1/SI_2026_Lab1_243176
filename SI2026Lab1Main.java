@@ -53,6 +53,11 @@ class Library {
 
     // TODO: Implement in branch feature-search-books
     public boolean searchBookByTitle(String title) {
+        for (Book b : books) {
+            if (b.getTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -62,7 +67,7 @@ class Library {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (!book.isBorrowed()) {
                     book.setBorrowed(true);
-                    System.out.println("Book borrowed.");
+                    System.out.println("Borrowed succesfully.");
                 } else {
                     System.out.println("Book is already borrowed.");
                 }
@@ -117,6 +122,18 @@ class Library {
         }
         return false;
     }
+
+    public boolean Borrowed(String title) {
+        for (Book b : books) {
+            if (b.getTitle().equalsIgnoreCase(title) && !b.isBorrowed()) {
+                b.setBorrowed(true);
+                System.out.println("Borrowed successfully");
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 
 public class SI2026Lab1Main {
@@ -133,6 +150,9 @@ public class SI2026Lab1Main {
         } else {
             System.out.println("Knigata ne postoi");
         }
+
+        library.borrowBook("Clean Code");
+
 
         System.out.println("Library initialized.");
     }
